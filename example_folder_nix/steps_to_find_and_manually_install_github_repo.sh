@@ -18,6 +18,8 @@ cd /nix/store
 # Incase there are any errors from nix
 unset NIX_REMOTE
 
+# Go to your .nix file, which is usually located in your /nix dir. 
+cd /nix
 
 # This makes the files for the pkg you build... it will be an id[a-z0-9]...-$yourpkgname.drv?
 nix-env -i -f oh-my-bash.nix
