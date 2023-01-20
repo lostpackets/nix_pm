@@ -14,7 +14,7 @@ echo "Running the command: nix-prefetch-git https://github.com/$owner/$name.git 
 nix-prefetch-git https://github.com/$owner/$name.git HEAD
 
 # This reads the keypress instantaneously
-read -p "Do you want to continue? (y/n) " -n 1 -r
+read -p "Do you want to continue to dl this github repo? (y/n) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
