@@ -1,6 +1,6 @@
 #!/home/$USER/.nix-profile/bin
 #!/bin/bash
-
+cd /nix
 # This checks & auto installs nix-prefetch-git if it has not already
 if [[ ! -x "$(command -v nix-prefetch-git)" ]]; then
     echo "nix-prefetch-git is not executable, installing it"
