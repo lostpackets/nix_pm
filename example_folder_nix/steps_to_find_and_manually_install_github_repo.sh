@@ -22,4 +22,7 @@ nix-shell -p
 nix-build oh-my-bash.nix
 
 # This part is very specific and needs for you to go inside and run the scripts provided from inside the github's repo (you have to manually install it if it was formerly automatic when ran)
+# The ./install.sh which is usually installed inside of a git cloned folder, is now in /nix/store/^[a-z0-9]$yourpkgname
+# And from your flake .nix file, its source will be based on your .nix file build. Mines is $src at /etc/bash.bashrc.d/oh-my-bash, for example.
+#                                                                                                                       \----- Can be any folder name :)
 /nix/store/6f2sr8cjgcnafpaz2zbhh98q9qis3plc-oh-my-bash/etc/bash.bashrc.d/oh-my-bash/tools/install.sh
