@@ -4,7 +4,7 @@ cd /nix
 # This checks & auto installs nix-prefetch-git if it has not already
 if [[ ! -x "$(command -v nix-prefetch-git)" ]]; then
     echo "nix-prefetch-git is not executable, installing it"
-    sudo nix-env -i nix-prefetch-git
+    nix-env -i nix-prefetch-git
 else
     echo "nix-prefetch-git is already installed"
 fi
