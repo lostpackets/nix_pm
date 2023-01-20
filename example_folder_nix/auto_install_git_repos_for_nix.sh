@@ -13,6 +13,14 @@ echo "Running the command: nix-prefetch-git https://github.com/$owner/$name.git 
 # Get the git hash and sha256 hash
 nix-prefetch-git https://github.com/$owner/$name.git HEAD
 
+# This reads the keypress instantaneously
+read -p "Do you want to continue? (y/n) " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
 output=$(nix-prefetch-git https://github.com/$owner/$name.git HEAD &)
 wait
 echo $output
