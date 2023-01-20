@@ -1,5 +1,9 @@
 # This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
+# Look through your available list of repos in your nix-env
+cat <(nix-env -q) | awk '{gsub(/-[0-9].*/,"",$0); print $0}'
+
+
 # Going into the /nix dir first
 cd /nix
 
