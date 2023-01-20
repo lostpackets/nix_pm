@@ -54,6 +54,9 @@ pkgs.stdenv.mkDerivation {
 }
 EOL
 
+# This will export the path from your nix profile so that you can call your nix binaries anywhere in PATH
+export PATH="/home/$USER/.nix-profile/bin/:$PATH"
+
 echo "Now you can run this github repo with the command: nix-env -i -f $name.nix"
 # It will automatically state the path where it dl'ed, for example: shrinking RPATHs of ELF executables and libraries in /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash
 # Run the path /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash which should be located at /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash/ + "etc/bash.bashrc.d/oh-my-bash/tools/install.sh". My script was written in a way that it copies its dir and sources it at \$src \$out/etc/bash.bashrc.d/$name
