@@ -3,3 +3,5 @@
 cd /nix
 nix-env -i -f oh-my-bash.nix
 
+# For confirmation, oh-my-bash should show up inside the user's nix-env -q
+nix-env -q |grep oh
