@@ -4,7 +4,7 @@ cd /nix
 # This checks & auto installs nix-prefetch-git if it has not already
 if [[ ! -x "$(command -v nix-prefetch-git)" ]]; then
     echo "nix-prefetch-git is not executable, installing it"
-    sudo nix-env -i nix-prefetch-git
+    nix-env -i nix-prefetch-git
 else
     echo "nix-prefetch-git is already installed"
 fi
@@ -55,3 +55,5 @@ pkgs.stdenv.mkDerivation {
 EOL
 
 echo "Now you can run this github repo with the command: nix-env -i -f $name.nix"
+# It will automatically state the path where it dl'ed, for example: shrinking RPATHs of ELF executables and libraries in /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash
+# Run the path /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash which should be located at /nix/store/hell092fprm2ju3o8qqkhahs4ch-oh-my-bash/ + "etc/bash.bashrc.d/oh-my-bash/tools/install.sh". My script was written in a way that it copies its dir and sources it at \$src \$out/etc/bash.bashrc.d/$name
