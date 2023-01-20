@@ -1,3 +1,4 @@
+# This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
 # Goes into /nix/store
 cd ~/nix/store
