@@ -1,7 +1,7 @@
 # This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
 # Going into the /nix dir first
-cd ~/nix
+cd /nix
 
 nix-build oh-my-bash.nix
 
@@ -12,7 +12,7 @@ unset NIX_REMOTE
 
 
 # Goes into /nix/store
-cd ~/nix/store
+cd /nix/store
 # This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
 # Incase there are any errors from nix
@@ -27,7 +27,7 @@ nix-env -i -f oh-my-bash.nix
 ls -t| grep -E '^[a-z0-9]{32}-oh-my-bash$'|head -n 1
 
 # Going back to /nix dir (Sometimes building inside the /nix/store dir will not work)
-cd ~/nix
+cd /nix
 
 # Needing to get into nix-shell to build it
 # Unset incase there are any issues from nix, again
