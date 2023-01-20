@@ -1,7 +1,19 @@
 # This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
+# Going into the /nix dir first
+cd ~/nix
+
+nix-build oh-my-bash.nix
+
+
+
+# Incase there are any errors from nix
+unset NIX_REMOTE
+
+
 # Goes into /nix/store
 cd ~/nix/store
+# This isn't meant to be ran as a shell script or anything, the file extension just helps me see the syntax highlighting
 
 # Incase there are any errors from nix
 unset NIX_REMOTE
@@ -18,8 +30,12 @@ ls -t| grep -E '^[a-z0-9]{32}-oh-my-bash$'|head -n 1
 cd ~/nix
 
 # Needing to get into nix-shell to build it
+# Unset incase there are any issues from nix, again
+unset NIX_REMOTE
+
 nix-shell -p
 # Inside nix-shell within the /nix dir, it will build it
+# You will use this build it outputs:
 nix-build oh-my-bash.nix
 
 # This part is very specific and needs for you to go inside and run the scripts provided from inside the github's repo (you have to manually install it if it was formerly automatic when ran)
