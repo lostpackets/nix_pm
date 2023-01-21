@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Mainly uses nix-env -q (to list out your built software) then goes to /nix/store to check the nix hash of your package name (assuming that your installed package list -q matches your package's name).
 
 # Get the list of packages
 variable_name=($(nix-env -q | awk '{gsub(/-[0-9].*/,"",$0); print $0}'))
